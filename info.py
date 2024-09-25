@@ -36,7 +36,7 @@ pyroutils.MIN_CHAT_ID = -999999999999
 pyroutils.MIN_CHANNEL_ID = -100999999999999
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Ramanan:Ramanan@cluster0.lvbe2wu.mongodb.net/")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://duker:duker@cluster0.6zezhye.mongodb.net/")
 DATABASE_NAME = environ.get('DATABASE_NAME', "duker")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
