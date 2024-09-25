@@ -2,20 +2,6 @@ import asyncio
 from pyrogram import Client, enums
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from Script import script
-from database.join_reqs import JoinReqs
-from info import REQ_CHANNEL, AUTH_CHANNEL, JOIN_REQS_DB, ADMINS
-
-from logging import getLogger
-
-logger = getLogger(__name__)
-INVITE_LINK = None
-db = JoinReqs
-
-import asyncio
-from pyrogram import Client, enums
-from pyrogram.errors import FloodWait, UserNotParticipant
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from utils import check_loop_sub, get_size
 from database.join_reqs import JoinReqs
 from info import REQ_CHANNEL, AUTH_CHANNEL, JOIN_REQS_DB, ADMINS, CUSTOM_FILE_CAPTION
@@ -186,30 +172,3 @@ async def send_file(client, query, ident, file_id):
                     )
     )
     
-        if not is_cb:
-            await update.reply(
-                text=text,
-                quote=True,
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=enums.ParseMode.MARKDOWN,
-            )
-        return False
-
-    except FloodWait as e:
-        await asyncio.sleep(e.x)
-        fix_ = await ForceSub(bot, update, file_id)
-        return fix_
-
-    except Exception as err:
-        print(f"Something Went Wrong! Unable to do Force Subscribe.\nError: {err}")
-        await update.reply(
-            text="Something went Wrong.",
-            parse_mode=enums.ParseMode.MARKDOWN,
-            disable_web_page_preview=True
-        )
-        return False
-
-
-def set_global_invite(url: str):
-    global INVITE_LINK
-    INVITE_LINK = url
