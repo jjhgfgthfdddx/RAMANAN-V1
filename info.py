@@ -14,26 +14,26 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = '10001717'
-API_HASH = 'c8cdc2079f7ab083e644381740260265'
-BOT_TOKEN = '6698489150:AAG4A33Bh_c4BXFnI6nrzwrL1gaa3PSLz9E'
+API_ID = '12618934'
+API_HASH = '49aacd0bc2f8924add29fb02e20c8a16'
+BOT_TOKEN = '5331606915:AAGo6ubL7AyT4PmoUisEJzTZjyezKqPdduk'
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://graph.org/file/92bcf73a0428be54e2d59.mp4')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/d47c44304c2219766033b.jpg')).split()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5531461861 1198310247 1878911986 5652656279').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001833247384').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7425490417 1509123054 1499662579').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002397004421 -1002096796235').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Jerrycbbot:Jerrycbbot@cluster0.hxkjmbw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Ramanan:Ramanan@cluster0.lvbe2wu.mongodb.net/")
+DATABASE_NAME = environ.get('DATABASE_NAME', "duker")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # FSUB
@@ -41,22 +41,18 @@ auth_channel = environ.get('AUTH_CHANNEL')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 
 # Dont Change Anything Here
-REQ_CHANNEL=environ.get("REQ_CHANNEL", None)
+REQ_CHANNEL=environ.get("REQ_CHANNEL", "1001544569591")
 REQ_CHANNEL = (int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False) if REQ_CHANNEL is not None else None
 JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
 DELETE_TIMEOUT = int(environ.get('DELETE_TIMEOUT', 2*60*60)) # 2 hours in seconds
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001632393579))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001532456685))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'CINEMAHUB_NEW_MOVIES')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", """<b>📂Fɪʟᴇɴᴀᴍᴇ : {file_name}</b>
-╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗
-Main Channel ➧ https://t.me/+_CIGB5Zb3k4zZTg1
-🎗️ʝσιи 🎗️ ѕнαяє🎗️ ѕυρρσят🎗️
-╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝>""")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
 
 
 
