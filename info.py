@@ -1,5 +1,6 @@
 import re
 from os import environ
+from Script import script 
 from dotenv import load_dotenv
 load_dotenv("./dynamic.env", override=True)
 
