@@ -32,8 +32,8 @@ SPELL_CHECK = {}
 BTN = InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("🎥NEW MOVIES 🎥", url="https://t.me/+o34NLPXx4ZMyYWU1"),
-                    InlineKeyboardButton("💥Sʜᴀʀᴇ💥", url="https://t.me/share/url?url=https://t.me/UPDATECHANNELHUB")
+                    InlineKeyboardButton("🎥NEW MOVIES 🎥", url="https://t.me/+yKqnKrklurtkNTI1"),
+                    InlineKeyboardButton("💥Sʜᴀʀᴇ💥", url="https://t.me/share/url?url=https://t.me/Cinemalokamramanan2024")
                 ]
 		        
             ]
