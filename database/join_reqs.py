@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# (c) @AlbertEinsteinTG
+
 import motor.motor_asyncio
 from info import REQ_CHANNEL
 
@@ -51,7 +55,6 @@ class JoinReqs:
 
     async def get_fsub_chat(self):
         return await self.chat_col.find_one({})
-    
+
     async def delete_fsub_chat(self, chat_id):
         await self.chat_col.delete_one({"chat_id": chat_id})
-        
