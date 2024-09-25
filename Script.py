@@ -218,6 +218,16 @@ Movies - Varisu 2023
 Series - Dark S01E01
 
 𝗠𝗼𝗿𝗲 𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 :- Click On The Button In Your Language below 🎭"""
+
+    CAPTION = """<b>𝐻𝑒𝑙𝑙𝑜 👋 {mention} 😍</b>
+
+<b>📂 Fɪʟᴇ ɴᴀᴍᴇ : <code>{file_name}</code></b>
+
+<b> ⚡Thanks For Using RAMANAN🤖♥️</b>
+
+<b> Note : <tt>Files Are Not Owned By Us⚠️</tt></b>
+
+<b> [🤖ʀᴀᴍᴀɴᴀɴ ʙᴏᴛ🤖](http://t.me/Cinemalokam071_bot)</b>"""
     
     STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
