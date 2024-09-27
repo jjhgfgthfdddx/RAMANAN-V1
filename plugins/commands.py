@@ -241,7 +241,17 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
-        )
+        reply_markup=InlineKeyboardMarkup(
+                          [
+                            [                            
+                            InlineKeyboardButton("🎥NEW MOVIES 🎥", url="https://t.me/+yKqnKrklurtkNTI1")
+                          ],[     
+                            InlineKeyboardButton("🖥 𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌 🖥", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
+                           ]
+                        ]
+                    )
+    )
+            
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
