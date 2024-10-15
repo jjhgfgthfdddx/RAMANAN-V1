@@ -33,7 +33,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 auth_channel = environ.get('AUTH_CHANNEL', "-1001544569591")
-AUTH_CHANNEL = environ.get('AUTH_CHANNEL', "-1001544569591")
+AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 pyroutils.MIN_CHAT_ID = -999999999999
 pyroutils.MIN_CHANNEL_ID = -100999999999999
 
