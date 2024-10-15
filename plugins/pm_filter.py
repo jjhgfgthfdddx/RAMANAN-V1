@@ -492,7 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "movedow":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+2FCs53JjHZo0MmZl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+3P_LfAbmDv5jMzM1"),
             InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='help')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)        
@@ -518,7 +518,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "movereqs":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+2FCs53JjHZo0MmZl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+3P_LfAbmDv5jMzM1"),
             InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='help')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)        
@@ -530,7 +530,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "movereq":
         buttons = [[
-            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+2FCs53JjHZo0MmZl"),
+            InlineKeyboardButton("👥 𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐆𝐫𝐨𝐮𝐩", url=f"https://t.me/+3P_LfAbmDv5jMzM1"),
             InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='commun')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)        
