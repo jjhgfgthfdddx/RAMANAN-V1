@@ -32,6 +32,8 @@ auth_users = [int(user) if id_pattern.search(user) else user for user in environ
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
+auth_channel = environ.get('AUTH_CHANNEL', "-1001544569591")
+AUTH_CHANNEL = environ.get('AUTH_CHANNEL', "-1001544569591")
 pyroutils.MIN_CHAT_ID = -999999999999
 pyroutils.MIN_CHANNEL_ID = -100999999999999
 
@@ -40,16 +42,6 @@ DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://duker:duker@cluster0.6
 DATABASE_NAME = environ.get('DATABASE_NAME', "duker")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
-# FSUB
-auth_channel = environ.get('AUTH_CHANNEL')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-
-# Dont Change Anything Here
-REQ_CHANNEL=environ.get("REQ_CHANNEL", None)
-REQ_CHANNEL = (int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False) if REQ_CHANNEL is not None else None
-JOIN_REQS_DB = environ.get("JOIN_REQS_DB", DATABASE_URI)
-DELETE_TIMEOUT = int(environ.get('DELETE_TIMEOUT', 2*60*60)) # 2 hours in seconds
-
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', -1001532456685))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'CINEMAHUB_NEW_MOVIES')
@@ -57,9 +49,6 @@ P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", f"{script.CAPTION}")
-
-
-
 
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", CUSTOM_FILE_CAPTION)
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
