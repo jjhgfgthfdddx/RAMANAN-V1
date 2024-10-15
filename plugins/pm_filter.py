@@ -399,7 +399,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
             file_id=file_id,
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
-	    )
+	    reply_markup=InlineKeyboardMarkup(
+                          [
+                            [                            
+                            InlineKeyboardButton("🎥 NEW MOVIES 🎥", url="https://t.me/+yKqnKrklurtkNTI1")
+                          ],[     
+                            InlineKeyboardButton("🖥 𝐎𝐓𝐓 𝐈𝐍𝐒𝐓𝐆𝐑𝐀𝐌 🖥", url='https://www.instagram.com/new_ott__updates?igsh=MTMxcmhwamF4eGp6eg==')
+                           ]
+                        ]
+                    )
+    )
+            	    
 	    
     elif query.data.startswith("killfilesdq"):
         ident, keyword = query.data.split("#")
