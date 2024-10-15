@@ -45,50 +45,18 @@ class temp(object):
     B_NAME = None
     SETTINGS = {}
 
-async def check_loop_sub(client, message):
-    count = 0
-    while True:
-        if count == 15:
-            return False
-        check = await is_subscribed(client, message)
-        count += 1
-        if check:
-            return True
-        else:
-            pass
-        await asyncio.sleep(1)
-
 async def is_subscribed(bot, query):
-    
-    ADMINS.extend([1125210189]) if not 1125210189 in ADMINS else ""
-
-    if not AUTH_CHANNEL and not REQ_CHANNEL:
-        return True
-    elif query.from_user.id in ADMINS:
-        return True
-
-
-    if db2().isActive():
-        user = await db2().get_user(query.from_user.id)
-        if user:
-            return True
-        else:
-            return False
-
-    if not AUTH_CHANNEL:
-        return True
     try:
         user = await bot.get_chat_member(AUTH_CHANNEL, query.from_user.id)
     except UserNotParticipant:
-        return False
+        pass
     except Exception as e:
         logger.exception(e)
-        return False
     else:
-        if not (user.status == enums.ChatMemberStatus.BANNED):
+        if user.status != 'kicked':
             return True
-        else:
-            return False
+
+    return False
 
 async def get_poster(query, bulk=False, id=False, file=None):
     if not id:
