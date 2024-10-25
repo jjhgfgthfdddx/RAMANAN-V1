@@ -41,13 +41,24 @@ BTN = InlineKeyboardMarkup(
             ]
 )
 
-@Client.on_message((filters.group | filters.private) & filters.text & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filters(client, message):
     k = await global_filters(client, message)    
     if k == False:
-        await auto_filter(client, message)
+        await auto_filter(client, message)    
 
-
+@Client.on_message(filters.private & filters.text & filters.incoming)
+async def pm_text(bot, message):
+    content = message.text
+    user = message.from_user.first_name
+    user_id = message.from_user.id
+    if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
+    await message.reply_text("<b>Just type the movie name in the group. I can only work in groups\n\nഇവിടെ ചോദിച്ചാൽ സിനിമ കിട്ടില്ല ഗ്രൂപ്പിൽ മാത്രം സിനിമ ചോദിക്കുക\n\n ask in Group Link👇\nhttps://t.me/Cinemalokamramanan2024\n https://t.me/Cinemalokamramanan2024</b>")
+    await bot.send_message(
+        chat_id=LOG_CHANNEL,
+        text=f"<b>#PM_MSG\n\nName : {user}\n\nID : {user_id}\n\nMessage : {content}</b>"
+)
+	    
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
